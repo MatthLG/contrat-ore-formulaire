@@ -8,6 +8,12 @@ import {
 import * as Yup from 'yup'
 import TextError from './TextError'
 
+const ContractORE = require('../blockchain/Contract.js');
+const Blockchain = require('../blockchain/Blockchain');
+const Participants = require('../blockchain/Participants.js');
+
+const BlockchainNotariale = new Blockchain('poa');
+
 const initialValues = {
 annee_signature: '',
 jour_mois_signature: '', 
@@ -69,9 +75,16 @@ annexe_contenu: 'annexe'
 const onSubmit = (values, submitProps) => {
     //console.log('Form data', values);
     //console.log('submitProps', submitProps);
-    let contract = values;
-    let contractJSON = JSON.stringify(contract)
-    console.log(contractJSON);
+    let contract = new ContractORE(values);
+    let notaire = Participants.nodes()[1];
+    BlockchainNotariale.createTransaction(contract);
+    
+    BlockchainNotariale.generateBlock(notaire);
+
+    console.log(BlockchainNotariale);
+    console.log(BlockchainNotariale.chain[1]['transactions']);
+    
+
     submitProps.setSubmitting(false);
     submitProps.resetForm();
 }
