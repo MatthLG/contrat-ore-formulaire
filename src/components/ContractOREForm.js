@@ -8,7 +8,7 @@ import {
 import * as Yup from 'yup'
 import TextError from './TextError'
 
-const ContractORE = require('../blockchain/Contract.js');
+
 const Blockchain = require('../blockchain/Blockchain');
 const Participants = require('../blockchain/Participants.js');
 
@@ -75,9 +75,9 @@ annexe_contenu: 'annexe'
 const onSubmit = (values, submitProps) => {
     //console.log('Form data', values);
     //console.log('submitProps', submitProps);
-    let contract = new ContractORE(values);
+   
     let notaire = Participants.nodes()[1];
-    BlockchainNotariale.createTransaction(contract);
+    BlockchainNotariale.createTransaction(values);
     
     BlockchainNotariale.generateBlock(notaire);
 
