@@ -3,7 +3,7 @@ import Transaction from './Transaction.js';
 
 import ProofOfWork from '../consensus/proof-of-work.js';
 import ProofOfStake from '../consensus/proof-of-stake.js';
-import ProofOfAuthority from('../consensus/proof-of-authority.js');
+import ProofOfAuthority from '../consensus/proof-of-authority.js';
 
 class Blockchain {
     constructor (consensus) {
@@ -113,4 +113,4 @@ class Blockchain {
 
 }
 
-module.exports = Blockchain;
+export default Blockchain;
