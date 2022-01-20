@@ -15,4 +15,4 @@ class Participants {
     };
 }
 
-module.exports = Participants;
+export default Participants;
