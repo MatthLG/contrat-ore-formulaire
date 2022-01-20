@@ -1,9 +1,9 @@
-const Block = require('./Block.js');
-const Transaction = require('./Transaction.js');
+import Block from './Block.js';
+import Transaction from './Transaction.js';
 
-const ProofOfWork = require('../consensus/proof-of-work.js');
-const ProofOfStake = require('../consensus/proof-of-stake.js');
-const ProofOfAuthority = require('../consensus/proof-of-authority.js');
+import ProofOfWork from '../consensus/proof-of-work.js';
+import ProofOfStake from '../consensus/proof-of-stake.js';
+import ProofOfAuthority from('../consensus/proof-of-authority.js');
 
 class Blockchain {
     constructor (consensus) {
