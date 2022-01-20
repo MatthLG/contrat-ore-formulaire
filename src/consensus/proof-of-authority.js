@@ -1,5 +1,5 @@
-const Participants = require('../blockchain/Participants.js');
-const SHA256 = require('crypto-js/sha256');
+import Participants from '../blockchain/Participants.js';
+import SHA256 from 'crypto-js/sha256';
 
 /**
  * Simple implementation of a proof of authority consensus. 
@@ -24,4 +24,4 @@ class ProofOfAuthority {
     }
 }
 
-module.exports = ProofOfAuthority;
+export default ProofOfAuthority;

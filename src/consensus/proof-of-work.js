@@ -1,4 +1,4 @@
-const SHA256 = require('crypto-js/sha256');
+import SHA256 from 'crypto-js/sha256';
 
 /**
  * Simple implementation of a proof of work consensus. 
@@ -31,4 +31,4 @@ class ProofOfWork {
     }
 }
 
-module.exports = ProofOfWork;
+export default ProofOfWork;
