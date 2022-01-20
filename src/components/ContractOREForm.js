@@ -9,8 +9,8 @@ import * as Yup from 'yup'
 import TextError from './TextError'
 
 
-const Blockchain = require('../blockchain/Blockchain');
-const Participants = require('../blockchain/Participants.js');
+import Blockchain from '../blockchain/Blockchain';
+import Participants from '../blockchain/Participants.js';
 
 const BlockchainNotariale = new Blockchain('poa');
 
